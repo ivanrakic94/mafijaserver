@@ -54,6 +54,11 @@ public class Partija implements Runnable {
 		pom[4].getIzlaz().println("Lekar");
 		pom[5].getIzlaz().println("Policajac");
 		
+		//ovo se salje da bi se ubicama ispisalo ko je drugi ubica
+		for (int i = 0; i < pom.length; i++) {
+			pom[i].getIzlaz().println(pom[0].getIme()+" i "+pom[1].getIme());
+		}
+		
 		
 		try {
 			//odavde krece partija
