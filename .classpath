@@ -2,5 +2,11 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="lib" path="src/res/java-rt-jar-stubs-1.5.0.jar"/>
+	<classpathentry kind="lib" path="src/res/baza/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="src/res/baza/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="src/res/baza/hsqldb.jar"/>
+	<classpathentry kind="lib" path="src/res/baza/jackcess-2.0.4.jar"/>
+	<classpathentry kind="lib" path="src/res/baza/ucanaccess-3.0.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
