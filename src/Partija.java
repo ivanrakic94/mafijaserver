@@ -14,6 +14,7 @@ public class Partija implements Runnable {
 	private int brUbica = 2;
 	//kraj partije
 	private boolean kraj = false;
+	private boolean uspesnoUlogovan = false;
 	
 	public Partija(LinkedList<Igrac> lista, int partijaId) {
 		igraci = lista;
@@ -28,6 +29,8 @@ public class Partija implements Runnable {
 		
 		//ciscenje liste
 		igraci.clear();
+		
+		
 		
 		//slanje svim igracima imena svih igraca
 		for (int i = 0; i < pom.length; i++) {
