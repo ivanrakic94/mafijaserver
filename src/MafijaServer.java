@@ -6,13 +6,13 @@ import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.LinkedList;
-
 import java.sql.*;
 
 public class MafijaServer implements Runnable {
 
 	static LinkedList<Igrac> igraci = new LinkedList<Igrac>();
 	static LinkedList<ChatNitZaSve> igraci2 = new LinkedList<ChatNitZaSve>();
+	static LinkedList<Partija> partije=new LinkedList<Partija>();
 	static int partijaId = 0;
 	static boolean uspesnoUlogovan = false;
 
@@ -130,12 +130,12 @@ public class MafijaServer implements Runnable {
 
 				igraci.add(new Igrac(user, klijentskiSoket));
 
-				if (igraci.size() == 6) {
-					Partija p = new Partija(igraci, partijaId);
-					p.run();
-
+				if (igraci.size()%6 == 0) {
+					partije.add(new Partija(igraci, partijaId));
+					new Thread(partije.getLast()).start();
+					partijaId++;
+					
 				}
-
 			}
 
 		} catch (BindException e) {
