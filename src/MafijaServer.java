@@ -153,8 +153,27 @@ public class MafijaServer implements Runnable {
 			while (true) {
 				Socket klijentskiS = serSoket.accept();
 				BufferedReader ulaz2 = new BufferedReader(new InputStreamReader(klijentskiS.getInputStream()));
-				igraci2.add(new ChatNitZaSve(klijentskiS, igraci2, ulaz2.readLine()));
+				String ime=ulaz2.readLine();
+				int partID=0;
+				boolean b=false;
+			
+				for (int i = 0; i < partije.size(); i++) {
+					for (int j = 0; j < partije.get(i).getPom().length; j++) {
+						if(partije.get(i).getPom()[j].getIme().equals(ime)){
+							partID=i;
+							System.out.println(partID);
+							b=true;
+							break;
+							
+						}
+						
+					}
+					if(b==true){break;}
+				}
+				
+				igraci2.add(new ChatNitZaSve(klijentskiS, igraci2, ime,partID));
 				igraci2.getLast().start();
+
 
 			}
 		} catch (IOException e) {

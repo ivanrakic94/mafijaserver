@@ -12,6 +12,14 @@ public class Partija implements Runnable {
 	Igrac[] pom = new Igrac[6];
 	private int brGradjana = 2;
 	private int brUbica = 2;
+	public Igrac[] getPom() {
+		return pom;
+	}
+
+	public void setPom(Igrac[] pom) {
+		this.pom = pom;
+	}
+
 	//kraj partije
 	private boolean kraj = false;
 	private boolean uspesnoUlogovan = false;
